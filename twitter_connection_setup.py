@@ -65,6 +65,19 @@ def collect_by_streaming():
 
 print(collect_by_streaming())
 
+#Fonction 2 : on cherche les tweets à partir des listes de mots clés fournis par le client
+
+def get_candidate_queries(num_candidate, file_path):
+    try:
+        connexion = twitter_setup()
+        List_of_words = open('keyword_candidate__num_candidate.txt','r')
+        for word in List_of_words:
+            tweets = connexion.search(word)
+            print(tweets)
+    except OSError:
+        pass
+
+
 
 
 
